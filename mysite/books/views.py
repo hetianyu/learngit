@@ -7,8 +7,8 @@ def index(request):
     c=Context({"book_list":book_list})
     return render_to_response("index.html",c)
 def addbook(request):
-    if request.POST:
-        post=request.POST
+    if require.POST:
+        post=require.POST
         a=Author(AuthorID=post['AID'],Name=post['AN'],Age=post['AA'],Country=post['AC'])
         a.save()
         b=Book(ISBN=post['BI'],Price=post['BP'],Publishdate=post['BPD'],Publisher=post['BPE'],Title=post['BT'],AuthorID=a)
